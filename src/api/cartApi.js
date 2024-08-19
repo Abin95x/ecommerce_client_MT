@@ -1,7 +1,6 @@
 import { axiosInstance } from "./axiosInstance";
 
 export async function addToCart(values) {
-    console.log(values)
     const data = await axiosInstance.post('/cart/addtocart', values)
     return data
 }

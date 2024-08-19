@@ -1,7 +1,6 @@
 import { axiosInstance } from "./axiosInstance";
 
 export async function getWishlist(id) {
-    console.log(id)
     const data = await axiosInstance.get(`/wishlist/getwishlist?userId=${id}`)
     return data
 }

@@ -14,7 +14,6 @@ const Cart = () => {
   useEffect(() => {
     async function getCartProducts() {
       const res = await getCart(id);
-      console.log(res)
       setCartData(res?.data?.product || []);
     }
     getCartProducts();

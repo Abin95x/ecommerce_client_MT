@@ -31,7 +31,6 @@ const SideBar = () => {
 
       if (name === 'All Products') {
         const res = await getProducts()
-        console.log(res)
         dispatch(
           setProducts({
             products: res?.data,
@@ -39,7 +38,6 @@ const SideBar = () => {
         );
       } else {
         const res = await getOneCategory(name)
-        console.log(res)
         dispatch(
           setProducts({
             products: res?.data?.products,
