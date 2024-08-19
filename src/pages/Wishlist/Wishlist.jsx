@@ -21,7 +21,6 @@ const Wishlist = () => {
           setWishlist(response?.data?.wishlist?.product); 
         }
       } catch (err) {
-    
         console.error(err);
         toast.error('Failed to fetch wishlist');
       } finally {

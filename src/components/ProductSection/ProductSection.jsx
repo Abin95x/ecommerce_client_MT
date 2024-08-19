@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { FaCartPlus, FaHeart } from 'react-icons/fa'; 
+import { FaCartPlus, FaHeart } from 'react-icons/fa';
 import { addToCart } from '../../api/cartApi';
 import { addToWishlist } from '../../api/wishlistApi';
 import { toast } from 'react-toastify';
@@ -29,8 +29,10 @@ const ProductSection = () => {
 
     const handleAddToCart = async (product) => {
         try {
-            await addToCart({ userId: id, productId: product._id, price: product.price });
-            toast.success('Added to cart');
+            const res = await addToCart({ userId: id, productId: product._id, price: product.price });
+            if (res.status === 200) {
+                toast.success('Added to cart');
+            }
         } catch (error) {
             console.error(error);
         }
@@ -38,8 +40,10 @@ const ProductSection = () => {
 
     const handleAddToWishlist = async (product) => {
         try {
-            await addToWishlist({ userId: id, productId: product._id });
-            toast.success('Added to wishlist');
+            const res = await addToWishlist({ userId: id, productId: product._id });
+            if (res.status === 200) {
+                toast.success('Added to wishlist');
+            }
         } catch (error) {
             console.error(error);
         }
@@ -101,9 +105,9 @@ const ProductSection = () => {
                         </Link>
                     ))
                 ) : (
-                    
-                        <p className="">No products available</p>
-                    
+
+                    <p className="">No products available</p>
+
                 )}
             </div>
         </div>
