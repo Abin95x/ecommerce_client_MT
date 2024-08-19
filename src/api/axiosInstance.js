@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 
 const baseURl = import.meta.env.VITE_BASE_URL;
+
 const userBaseURL = `${baseURl}`
 
 const createAxiosInstance = (baseURL) => {

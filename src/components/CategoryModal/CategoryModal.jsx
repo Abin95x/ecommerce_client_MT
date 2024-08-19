@@ -32,6 +32,7 @@ const CategoryModal = () => {
   return (
     <>
       <Button
+        type="primary"
         onClick={showModal}
         className="bg-yellow-500 hover:bg-[#003F62] text-black font-bold py-2 px-4 rounded-2xl transition-colors duration-300"
       >

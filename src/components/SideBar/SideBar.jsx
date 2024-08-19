@@ -38,8 +38,8 @@ const SideBar = () => {
           })
         );
       } else {
-       const res = await getOneCategory(name)
-       console.log(res)
+        const res = await getOneCategory(name)
+        console.log(res)
         dispatch(
           setProducts({
             products: res?.data?.products,
@@ -52,32 +52,35 @@ const SideBar = () => {
   };
 
   return (
-    <div className='bg-gray-800 text-white w-64 h-screen p-4 flex flex-col'>
-      <div className='mb-4'>
-        <h2 className='text-xl font-semibold mb-2'>Categories</h2>
-        <div className='categories flex flex-col space-y-2'>
-          {categories.length > 0 ? (
-            <>
-              <button
-                key="all-products"
-                onClick={() => handleCategoryClick('All Products')}
-                className={`text-left p-2 hover:bg-gray-700 rounded ${selectedCategory === 'All Products' ? 'bg-gray-700' : ''}`}
-              >
-                All Products
-              </button>
-              {categories.map((category) => (
+    <div className='hidden md:block'>
+
+      <div className='bg-white  text-black border w-64 h-screen p-4 flex flex-col'>
+        <div className='mb-4 '>
+          <h2 className='text-xl font-semibold mb-2'>Categories</h2>
+          <div className='categories flex flex-col space-y-2'>
+            {categories.length > 0 ? (
+              <>
                 <button
-                  key={category._id}
-                  onClick={() => handleCategoryClick(category.name)}
-                  className={`text-left p-2 hover:bg-gray-700 rounded ${selectedCategory === category.name ? 'bg-gray-700' : ''}`}
+                  key="all-products"
+                  onClick={() => handleCategoryClick('All Products')}
+                  className={`text-left p-2 hover:bg-gray-200 rounded ${selectedCategory === 'All Products' ? 'bg-gray-200' : ''}`}
                 >
-                  {category.name}
+                  All Products
                 </button>
-              ))}
-            </>
-          ) : (
-            <div>No categories available</div>
-          )}
+                {categories.map((category) => (
+                  <button
+                    key={category._id}
+                    onClick={() => handleCategoryClick(category.name)}
+                    className={`text-left p-2 hover:bg-gray-200 rounded ${selectedCategory === category.name ? 'bg-gray-200' : ''}`}
+                  >
+                    {category.name}
+                  </button>
+                ))}
+              </>
+            ) : (
+              <div>No categories available</div>
+            )}
+          </div>
         </div>
       </div>
     </div>

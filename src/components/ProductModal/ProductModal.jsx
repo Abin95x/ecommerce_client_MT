@@ -139,18 +139,18 @@ const ProductModal = () => {
             <InputNumber className="input-custom w-full" min={0} />
           </Form.Item>
           <Form.Item
-        name="category"
-        label="Category"
-        rules={[{ required: true, message: 'Please select a category!' }]}
-      >
-        <Select className="input-custom">
-          {categories.map((category) => (
-            <Option key={category._id} value={category.name}>
-              {category.name}
-            </Option>
-          ))}
-        </Select>
-      </Form.Item>
+            name="category"
+            label="Category"
+            rules={[{ required: true, message: 'Please select a category!' }]}
+          >
+            <Select className="input-custom">
+              {categories.map((category) => (
+                <Option key={category._id} value={category.name}>
+                  {category.name}
+                </Option>
+              ))}
+            </Select>
+          </Form.Item>
           <Form.Item
             name="description"
             label="Description"

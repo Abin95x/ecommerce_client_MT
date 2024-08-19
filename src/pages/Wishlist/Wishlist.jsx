@@ -18,8 +18,9 @@ const Wishlist = () => {
     const fetchWishlist = async () => {
       try {
         const response = await getWishlist(id);
+        console.log(response)
         if (response.status === 200) {
-          setWishlist(response.data.wishlist.product); 
+          setWishlist(response?.data?.wishlist?.product); 
         }
       } catch (err) {
         setError('Failed to fetch wishlist');
