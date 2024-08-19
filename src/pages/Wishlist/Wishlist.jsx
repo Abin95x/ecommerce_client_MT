@@ -10,7 +10,6 @@ import "react-toastify/dist/ReactToastify.css";
 const Wishlist = () => {
   const [wishlist, setWishlist] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
   const user = useSelector((state) => state.user.user);
   const id = user._id;
 
@@ -23,7 +22,7 @@ const Wishlist = () => {
           setWishlist(response?.data?.wishlist?.product); 
         }
       } catch (err) {
-        setError('Failed to fetch wishlist');
+    
         console.error(err);
         toast.error('Failed to fetch wishlist');
       } finally {
@@ -59,9 +58,7 @@ const Wishlist = () => {
     return <div className='min-h-screen bg-white te flex items-center justify-center'>Loading...</div>;
   }
 
-  if (error) {
-    return <div className='min-h-screen flex items-center justify-center'>{error}</div>;
-  }
+ 
 
   return (
     <div className="bg-gray-100 min-h-screen">

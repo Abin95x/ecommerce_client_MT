@@ -101,9 +101,9 @@ const ProductSection = () => {
                         </Link>
                     ))
                 ) : (
-                    <div>
-                        <p className="text-center">No products available</p>
-                    </div>
+                    
+                        <p className="">No products available</p>
+                    
                 )}
             </div>
         </div>

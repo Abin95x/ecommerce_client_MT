@@ -14,6 +14,7 @@ const Cart = () => {
   useEffect(() => {
     async function getCartProducts() {
       const res = await getCart(id);
+      console.log(res)
       setCartData(res?.data?.product || []);
     }
     getCartProducts();
@@ -36,7 +37,6 @@ const Cart = () => {
   };
 
   const handleOrder = () => {
-    // Handle cart ordering logic here
     console.log('Proceed to checkout');
   };
 

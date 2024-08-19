@@ -11,16 +11,25 @@ import {
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form'
 import { signup } from '../../api/userApi';
+import { useDispatch } from 'react-redux';
+import { setUser } from '../../redux/userSlice';
 
 
 const Signup = () => {
   const navigate = useNavigate()
+  const dispatch = useDispatch();
   const { register, handleSubmit, formState: { errors } } = useForm()
   const onSubmit = async (data) => {
     const response = await signup(data)
     if(response?.status === 200){
       toast.success('Signup successful')
       localStorage.setItem('usertoken', response?.data?.usertoken);
+      const userData = response?.data?.userData;
+      dispatch(
+        setUser({
+          user: userData,
+        })
+      );
       navigate('/home')
     }
   }
