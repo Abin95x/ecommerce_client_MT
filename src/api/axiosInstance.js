@@ -2,8 +2,7 @@ import axios from 'axios'
 import { toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 
-// const baseURl = import.meta.env.VITE_BASE_URL;
-const baseURl = 'http://localhost:3000/';
+const baseURl = import.meta.env.VITE_BASE_URL;
 
 const userBaseURL = `${baseURl}`
 
