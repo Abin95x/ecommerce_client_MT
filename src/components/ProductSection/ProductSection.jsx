@@ -58,7 +58,7 @@ const ProductSection = () => {
     }
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen w-full p-4">
+        <div className="flex flex-col  min-h-screen w-full p-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {products.length > 0 ? (
                     products.map((product) => (
@@ -67,13 +67,13 @@ const ProductSection = () => {
                             key={product._id}
                             className="bg-white shadow-md rounded-lg overflow-hidden flex flex-col"
                         >
-                            <div>
-                                <div className="h-48 w-80 bg-gray-200 flex items-center justify-center">
+                            <div className='flex flex-col items-center justify-center'>
+                                <div className="h-48 w-80 m-8 bg-gray-200 flex items-center justify-center">
                                     <img
                                         className="object-cover h-full w-full"
                                         src={product.images[0]}
                                         alt={product.title || 'Product Image'}
-                                        onError={(e) => (e.target.src = '/path/to/placeholder-image.png')} // Fallback image
+                                        onError={(e) => (e.target.src = '/path/to/placeholder-image.png')} 
                                     />
                                 </div>
                                 <div className="p-4">

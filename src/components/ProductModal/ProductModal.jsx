@@ -30,7 +30,7 @@ const ProductModal = () => {
         return;
       }
       values.images = imgs;
-      setLoading(true); // Set loading to true when submission starts
+      setLoading(true);
 
       const res = await addProduct(values);
       if (res.status === 200) {
@@ -50,7 +50,7 @@ const ProductModal = () => {
     } catch (info) {
       console.log('Validate Failed:', info);
     } finally {
-      setLoading(false); // Reset loading to false when submission is complete
+      setLoading(false);
     }
   };
 

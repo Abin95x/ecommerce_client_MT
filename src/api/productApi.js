@@ -16,11 +16,6 @@ export async function searchProucts(value){
     return data
 }
 
-// export async function getDetails(id){
-//     const data = await axiosInstance.get(`/products/getdetails?id=${id}`)
-//     return data
-// }
-
 export async function editProduct(details){
     const data = await axiosInstance.post('/products/editdetails',details)
     return data
