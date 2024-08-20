@@ -5,6 +5,8 @@ import { getCart, updateQuantity, removeFromCart } from '../../api/cartApi'; // 
 import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import Swal from 'sweetalert2';
+
 
 const Cart = () => {
   const user = useSelector((state) => state.user.user);
@@ -36,10 +38,25 @@ const Cart = () => {
   };
 
   const handleOrder = () => {
-    console.log('Proceed to checkout');
+    Swal.fire({
+      title: "Are you sure?",
+      // text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, buy it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "Done!",
+          text: "Order placed",
+          icon: "success"
+        });
+      }
+    });
   };
 
-  console.log(cartData);
 
   return (
     <div className="bg-gray-100 min-h-screen">
