@@ -76,13 +76,13 @@ const Wishlist = () => {
                 </div>
                 <div className="flex flex-col md:flex-row items-center mt-4 md:mt-0">
                   <button
-                    className="mt-2 md:mt-0 md:ml-4 px-3 py-1 bg-blue-600 text-white rounded-lg hover:bg-red-700 transition"
+                    className="mt-2 md:mt-0 md:ml-4 px-3 py-1 bg-blue-600 text-white rounded-lg hover:bg-green-700 transition"
                     onClick={() => handleAddToCart(item.productId)}
                   >
                     Add to Cart
                   </button>
                   <button
-                    className="mt-2 md:mt-0 md:ml-4 px-3 py-1 bg-red-600 text-white rounded-lg hover:bg-red-700 transition"
+                    className="mt-2 md:mt-0 md:ml-4 px-3 py-1 bg-red-600 text-white rounded-lg hover:bg-yellow-700 transition"
                     onClick={() => handleRemoveFromWishlist(item.productId._id)}
                   >
                     Remove
