@@ -3,7 +3,6 @@ import { toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import { Link, useNavigate } from 'react-router-dom';
 import { FaRegHeart } from "react-icons/fa";
-
 import { Input } from 'antd';
 import CategoryModal from '../CategoryModal/CategoryModal';
 import ProductModal from '../ProductModal/ProductModal';
