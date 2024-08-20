@@ -51,10 +51,13 @@ const Header = () => {
                 <Link to='/' className="btn btn-ghost text-xl">E-commerce</Link>
             </div>
             <div className="flex-none gap-4">
-                <div className='flex gap-4'>
-                    <Input placeholder="Search products" className='w-60 rounded-3xl' onChange={(e) => handleChange(e.target.value)} />
-                    <CategoryModal />
-                    <ProductModal />
+
+                <div className=' hidden md:block'>
+                    <div className='flex gap-4 '>
+                        <Input placeholder="Search products" className='w-60 rounded-3xl' onChange={(e) => handleChange(e.target.value)} />
+                        <CategoryModal />
+                        <ProductModal />
+                    </div>
                 </div>
                 <div className="dropdown dropdown-end">
                     <div className='flex items-center gap-3'>
